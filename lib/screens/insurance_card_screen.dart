@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:citas_medicas/components/costom_button.dart';
 import 'package:citas_medicas/components/custom_drawer.dart';
-import 'package:citas_medicas/core/config/app_preferences.dart';
+// import 'package:citas_medicas/core/config/app_preferences.dart';
 import 'package:citas_medicas/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +27,7 @@ class InsuranceCardScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomButton(
+                  /*CustomButton(
                     color: AppColors.primaryColor,
                     height: 40, 
                     text: "Create Insurance", 
@@ -46,7 +46,7 @@ class InsuranceCardScreen extends StatelessWidget {
                       }                              
                     },
                   ),          
-                  const SizedBox(height: 15,),
+                  const SizedBox(height: 15,),*/
                   CustomButton(
                     color: AppColors.primaryColor,
                     height: 40, 
@@ -59,7 +59,7 @@ class InsuranceCardScreen extends StatelessWidget {
                         );
                       } catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Error: $e')),
+                          const SnackBar(content: Text('Inactive')),
                         );
                       }
                     },
@@ -77,12 +77,12 @@ class InsuranceCardScreen extends StatelessWidget {
                         );
                       } catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Error: $e')),
+                          const SnackBar(content: Text('Try Again')),
                         );
                       }
                     },
                   ),
-                  const SizedBox(height: 15),
+                  /*const SizedBox(height: 15),
                   CustomButton(
                     color: AppColors.primaryColor,
                     height: 40,
@@ -95,11 +95,11 @@ class InsuranceCardScreen extends StatelessWidget {
                         );
                       } catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Error: $e')),
+                          const SnackBar(content: Text('Try Again')),
                         );
                       }
                     },
-                  ),
+                  ),*/
                   const SizedBox(height: 15),
                   /*CustomButton(
                     color: AppColors.primaryColor,
@@ -143,7 +143,7 @@ class InsuranceCardScreen extends StatelessWidget {
           ),
           if (provider.isLoading)
             const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(strokeAlign: 20, strokeWidth: 6,),
             ),             
         ]
       ),

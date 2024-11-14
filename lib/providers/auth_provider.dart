@@ -39,7 +39,8 @@ class AuthProvider with ChangeNotifier {
   Future<String> renewInsurance() async {
     setLoading(true);
     try {
-      return await controller.renovarSeguro();
+      await controller.cancelarSeguro();
+      return await controller.crearSeguro();
     } finally {
       setLoading(false);
     }

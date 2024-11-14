@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 import 'dart:convert';
+import 'dart:io';
 import 'package:citas_medicas/core/config/app_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,7 +10,7 @@ import 'package:citas_medicas/utils/environment.dart';
 class AuthController {
   static const baseUrl = Environment.apiURL;
   static const blockchainURL = Environment.blockchainURL;  
-  static const duracion = "1000";
+  static const duracion = "100";
 
   static Future<bool> login(String email, String password) async {
     try {
@@ -38,7 +39,7 @@ class AuthController {
         print('Error al iniciar sesión');
         return false;
       }*/
-      
+      sleep(const Duration(seconds: 2));
       return true;
     } catch (e) {
       return false;
@@ -155,7 +156,7 @@ class AuthController {
       );
 
       if (response.statusCode == 200) {
-        print(response.body);;
+        print(response.body);
         return "Seguro renovado";
       } else {
         throw Exception('Failed to renew insurance: ${response.body}');
