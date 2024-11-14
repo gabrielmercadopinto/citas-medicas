@@ -1,0 +1,16 @@
+class Speciality {
+  final String id;
+  final String name;
+
+  Speciality({
+    required this.id, 
+    required this.name
+  });
+
+  factory Speciality.fromJson(Map<String, dynamic> json) {
+    return Speciality(
+      id: json['id'],
+      name: json['name'],
+    );
+  }
+}
